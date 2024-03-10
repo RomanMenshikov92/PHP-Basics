@@ -8,13 +8,13 @@ $patronymic = "иванович";
 */
 
 fwrite(STDOUT, "Введите имя: ");
-$firstName = trim(fgets(STDIN));
+$firstName = mb_convert_case(trim(fgets(STDIN)), MB_CASE_LOWER, "UTF-8");
 
 fwrite(STDOUT, "Введите фамилию: ");
-$lastName = trim(fgets(STDIN));
+$lastName = mb_convert_case(trim(fgets(STDIN)), MB_CASE_LOWER, "UTF-8");
 
 fwrite(STDOUT, "Введите отчество: ");
-$patronymic = trim(fgets(STDIN));
+$patronymic = mb_convert_case(trim(fgets(STDIN)), MB_CASE_LOWER, "UTF-8");
 
 // Объявить переменную $fullname, записать в неё полное ФИО так, чтобы каждое слово начиналось с большой буквы.
 $fullName = mb_convert_case($lastName, MB_CASE_TITLE, "UTF-8") . ' ' . mb_convert_case($firstName, MB_CASE_TITLE, "UTF-8") . ' ' . mb_convert_case($patronymic, MB_CASE_TITLE, "UTF-8");
